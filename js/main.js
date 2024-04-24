@@ -154,7 +154,7 @@ function enterLetter(e) {
                 activeCell = document.getElementById(`${activeRow.id}-${++cellId}`)
             }
         }
-        window.navigator.vibrate(100)
+        window.navigator.vibrate(1000)
     }
 }
 
@@ -265,13 +265,12 @@ function enterWord(e) {
                 for (let i = 1; i < 6; i++) {
                     document.getElementById(`${activeRow.id}-${i}`).animate([{
                         transform: "rotate(0)",
-                        transform: "rotate(360deg)"
+                        transform: "rotate(360deg)",
                     }],
                         {
                             duration: 500,
                             iterations: 1,
-                            delay: 100,
-
+                            delay: 200,
                         })
                 }
                 activeRow = document.getElementById(`${+activeRow.id + 1}`)

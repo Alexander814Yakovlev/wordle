@@ -174,7 +174,8 @@ body {
     padding: 30px 10px;
     font-family: Roboto;
     height: 100vh;
-    background-color: var(--main-bg);
+    max-width: 575px;
+    /* background-color: var(--main-bg); */
     color: var(--main-text)
 }
 
@@ -192,12 +193,14 @@ body {
     font-size: 30px;
 }
 .settings__list {
-    margin-top: 20px;
+    margin: 20px auto 10px;
+    width: 100%;
+    max-width: 420px;
 }
 .settings__item {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     gap: 50px;
 }
 
