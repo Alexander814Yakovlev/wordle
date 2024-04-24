@@ -34,16 +34,19 @@ p {
     margin: 0;
 }
 
+body {
+    background-color: var(--main-bg);
+}
 
 .app {
-    background-color: var(--main-bg);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin: 0 auto;
-    padding: 30px 10px;
+    padding: 20px 10px;
     font-family: Roboto;
     height: 100vh;
+    max-width: 575px;
 }
 
 .bg-accent {
@@ -76,8 +79,8 @@ p {
 }
 
 .small-tile {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -88,7 +91,7 @@ p {
 }
 
 .buttons {
-    font-size: 40px;
+    font-size: 35px;
     display: flex;
     flex-direction: row;
     gap: 10px;
@@ -103,7 +106,8 @@ p {
 
 /* Main board */
 .main__board {
-    padding: 50px 10px;
+    height: 60%;
+    padding: 0 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -115,8 +119,9 @@ p {
     display: flex;
     flex-direction: row;
     gap: 8px;
-    width: 80%;
-    height: 11vw;
+    width: 100%;
+    height: calc(100% / 6);
+    max-width: 420px;
 }
 
 .board-tile {
@@ -206,12 +211,5 @@ p {
 
 /* Media */
 @media screen and (min-width: 992px) {
-    .app {
-        width: 40%;
-        border: 1px solid black;
-    }
-
-    .row {
-        height: 70px;
-    }
+   
 }

@@ -154,6 +154,7 @@ function enterLetter(e) {
                 activeCell = document.getElementById(`${activeRow.id}-${++cellId}`)
             }
         }
+        window.navigator.vibrate(100)
     }
 }
 
