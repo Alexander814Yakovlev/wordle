@@ -5,6 +5,7 @@ let logo = app.querySelector(".logo")
 
 let board = app.querySelector(".main__board")
 let keyboard = app.querySelector(".keyboard")
+let keyVibrateTime = 80
 
 let activeRow
 let activeCell
@@ -15,6 +16,7 @@ let gameData = localStorage.getItem('wordle')
     ? JSON.parse(localStorage.wordle)
     : {
         darkTheme: false,
+        vibration: true,
         gamesPlayed: 0,
         totalWins: 0,
         totalLooses: 0,
@@ -154,7 +156,7 @@ function enterLetter(e) {
                 activeCell = document.getElementById(`${activeRow.id}-${++cellId}`)
             }
         }
-        window.navigator.vibrate(1000)
+        navigator.vibrate(keyVibrateTime)
     }
 }
 
@@ -215,6 +217,7 @@ function deleteLetter() {
     } else if ((cellId > 1 && activeCell.textContent != '')) {
         activeCell.textContent = ''
     }
+    navigator.vibrate(keyVibrateTime)
 }
 
 // Проверка слова
@@ -290,6 +293,7 @@ function enterWord(e) {
             confirmButtonColor: alertBtnColor,
         })
     }
+    navigator.vibrate(keyVibrateTime)
 };
 
 // Проверка слова - наэкранная клавиатура
