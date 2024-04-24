@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,14 +8,26 @@
     <title></title>
     <link rel="stylesheet" href="css/line-awesome.min.css">
     <link rel="stylesheet" href="css/sweetalert2.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/settings.css">
+    <link rel="stylesheet" href="css/info.css">
+    <link rel="stylesheet" href="css/stats.css">
+    <link rel="stylesheet" href="css/media.css">
 </head>
+
 <body>
     <div class="app">
         <div class="nav__top">
+            <div class="buttons">
+                <div class="stats-btn">
+                    <i class="lar la-chart-bar"></i>
+                </div>
+                <div class="empty-btn"></div>
+            </div>
             <div class="logo"></div>
             <div class="buttons">
-                <div class="rules-btn">
+                <div class="info-btn">
                     <i class="las la-info-circle"></i>
                 </div>
                 <div class="settings-btn">
@@ -28,11 +41,12 @@
 
     <div class="settings">
         <div class="settings__top">
+            <h2 class="settings__title">Настройки</h2>
             <div class="return-btn">
                 <i class="las la-undo"></i>
             </div>
         </div>
-        <div class="settings__title">Настройки</div>
+
         <div class="settings__list">
             <div class="settings__item">
                 <div class="settings__item-name">Темная тема</div>
@@ -50,10 +64,81 @@
             </div>
         </div>
     </div>
-    
+
+    <div class="info">
+        <div class="info__top">
+            <h2 class="info__title">Правила игры</h2>
+            <div class="return-btn">
+                <i class="las la-undo"></i>
+            </div>
+        </div>
+        <div class="rules">
+            <div class="rules__section">
+                <p>Угадайте загаданное слово в игре "5букв" с шести попыток.</p>
+                <p>После каждой попытки цвет букв будет меняться, чтобы показать, какие буквы есть в загаданном слове!
+                    Например, мы пытаемся отгадать слово ГОCТЬ и вводим слово Ребус:</p>
+            </div>
+            <div class="rules__section">
+                <div class="row rules__row">
+                    <div class="board-tile gray-bg">р</div>
+                    <div class="board-tile gray-bg">е</div>
+                    <div class="board-tile gray-bg">б</div>
+                    <div class="board-tile gray-bg">у</div>
+                    <div class="board-tile yellow-bg">с</div>
+                </div>
+                <p>Буква С есть в загаданном слове, но стоит в другом месте.</p>
+            </div>
+            <div class="rules__section">
+                <p>Затем ввели слово Сосна. Буква С и О есть в загаданном слове и стоят на правильных местах.</p>
+                <div class="row rules__row">
+                    <div class="board-tile gray-bg">с</div>
+                    <div class="board-tile green-bg">о</div>
+                    <div class="board-tile green-bg">с</div>
+                    <div class="board-tile gray-bg">н</div>
+                    <div class="board-tile gray-bg">а</div>
+                </div>
+            </div>
+            <div class="rules__section">
+                <p>Если буквы нет в загаданном слове, то она выделяется серым.</p>
+                <div class="row rules__row">
+                    <div class="board-tile gray-bg">п</div>
+                    <div class="board-tile gray-bg">и</div>
+                    <div class="board-tile gray-bg">р</div>
+                    <div class="board-tile gray-bg">а</div>
+                    <div class="board-tile gray-bg">т</div>
+                </div>
+            </div>
+            <div class="rules__section">
+                <h3>Какие слова могут быть загаданы?</h3>
+                <p>В основном загадываются существительные в единственном числе</p>
+            </div>
+            <div class="rules__section">
+                <h3>Могут ли в загадываемом слове быть одинаковые буквы?</h3>
+                <p>Да, в загаданном слове могут быть одинаковые буквы.</p>
+            </div>
+            <div class="rules__section">
+                <h3>Есть ли буква Ё в игре?</h3>
+                <p>По правилам русских кроссвордов буква Ё в словах заменена на E!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="stats">
+        <div class="stats__top">
+            <h2 class="stats__title">Статистика</h2>
+            <div class="return-btn">
+                <i class="las la-undo"></i>
+            </div>
+        </div>
+        <div class="stats__info"></div>
+    </div>
+
     <script src="js/sweetalert2.min.js"></script>
     <script src="js/5-letters_words.js"></script>
     <script src="js/main.js"></script>
     <script src="js/settings.js"></script>
+    <script src="js/info.js"></script>
+    <script src="js/stats.js"></script>
 </body>
+
 </html>

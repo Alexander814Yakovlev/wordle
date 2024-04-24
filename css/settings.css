@@ -1,0 +1,85 @@
+/* Settings */
+
+.settings__top,
+.info__top,
+.stats__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.return-btn {
+    font-size: 35px;
+    cursor: pointer;
+}
+.settings__title,
+.info__title {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 26px;
+}
+.settings__list {
+    margin: 20px auto 10px;
+    width: 100%;
+    max-width: 420px;
+}
+.settings__item {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* Переключатель */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 24px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    border-radius: 12px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    border-radius: 50%;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: var(--accent-bg);
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(16px);
+    -ms-transform: translateX(16px);
+    transform: translateX(16px);
+  }

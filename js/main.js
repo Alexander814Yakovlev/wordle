@@ -20,6 +20,7 @@ let gameData = localStorage.getItem('wordle')
         gamesPlayed: 0,
         totalWins: 0,
         totalLooses: 0,
+        winPercent: 0,
     }
 
 // Цвет кнопки в модальном окне
@@ -65,7 +66,7 @@ function createApp() {
         row.className = 'keyboard-row'
         for (let symbol of line.split("")) {
             let key = document.createElement("div")
-            key.className = 'keyboard-tile'
+            key.classList.add('keyboard-tile')
             key.id = symbol.charCodeAt(0)
             key.textContent = symbol
             switch (key.id) {
@@ -73,11 +74,13 @@ function createApp() {
                     key.id = 'backspace'
                     key.textContent = ''
                     key.innerHTML = '<i class="las la-backspace"></i>'
+                    key.classList.add('red-bg')
                     break
                 case '10004':
                     key.id = 'enter'
                     key.textContent = ''
                     key.innerHTML = '<i class="las la-check"></i>'
+                    key.classList.add('green-bg')
             }
             row.appendChild(key)
         }
@@ -245,6 +248,10 @@ function enterWord(e) {
         }
         // Если введенное слово == загаданному
         if (currentWord == word.name) {
+            gameData.totalWins++
+            gameData.gamesPlayed++
+            gameData.winPercent = Math.round(gameData.totalWins / gameData.gamesPlayed * 100)
+            localStorage.wordle = JSON.stringify(gameData)
             Swal.fire({
                 icon: "success",
                 text: `Поздравляем!\n${word.name}\n${word.definition}`,
@@ -259,6 +266,9 @@ function enterWord(e) {
                     document.getElementById(`${activeRow.id}-${i + 1}`).classList.add("green-bg")
                     document.getElementById(currentWord[i].charCodeAt(0)).classList.add("green-bg")
                 } else if (word.name.split("").includes(currentWord[i])) {
+                    document.getElementById(`${activeRow.id}-${i + 1}`).classList.add("yellow-bg")
+                    document.getElementById(currentWord[i].charCodeAt(0)).classList.add("yellow-bg")
+                } else {
                     document.getElementById(`${activeRow.id}-${i + 1}`).classList.add("gray-bg")
                     document.getElementById(currentWord[i].charCodeAt(0)).classList.add("gray-bg")
                 }
@@ -279,6 +289,9 @@ function enterWord(e) {
                 activeRow = document.getElementById(`${+activeRow.id + 1}`)
                 activeCell = document.getElementById(`${activeRow.id}-1`)
             } else {
+                gameData.totalLooses++
+                gameData.gamesPlayed++
+                localStorage.wordle = JSON.stringify(gameData)
                 Swal.fire({
                     icon: "error",
                     text: `Вы проиграли!\n${word.name}\n${word.definition}`,

@@ -1,0 +1,20 @@
+.stats {
+    display: none;
+}
+
+.stats__info {
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 30px;
+}
+
+.stats__tile {
+    width: 50%;
+    text-align: center;
+}
+
+.stats__tile_icon {
+    font-size: 40px;
+}

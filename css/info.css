@@ -1,0 +1,23 @@
+.info {
+    display: none;
+}
+
+.rules {
+    padding: 20px 10px;
+}
+.rules__section {
+    border-bottom: 1px solid var(--main-text);
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.rules__section>p {
+    margin-bottom: 10px;
+}
+
+.rules__row {
+    height: 5vh;
+    width: 65%;
+    gap: 3px;
+    margin-bottom: 10px;
+}

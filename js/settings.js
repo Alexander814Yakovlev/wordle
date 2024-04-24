@@ -1,5 +1,6 @@
 // Настройки (подключать после главного файла!)
 let settings = document.querySelector(".settings")
+settings.style.display = 'none'
 
 let settingsButton = app.querySelector(".settings-btn")
 let returnButton = settings.querySelector(".return-btn")
