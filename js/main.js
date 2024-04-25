@@ -256,7 +256,7 @@ function enterWord(e) {
             Swal.fire({
                 icon: "success",
                 title: "Поздравляем!",
-                html: `<h4>${word.name}</h4>
+                html: `<h4>${word.original_name}</h4>
                         <h5>Определение слова:</h5>
                         <p>${word.definitions[0]}</p>`,
                 preConfirm: startNewGame(),
@@ -299,7 +299,7 @@ function enterWord(e) {
                 Swal.fire({
                     icon: "error",
                     title: `Вы проиграли!`,
-                    html: `<h4>${word.name}</h4>
+                    html: `<h4>${word.original_name}</h4>
                             <h5>Определение слова:</h5>
                             <p>${word.definitions[0]}</p>`,
                     preConfirm: startNewGame(),
