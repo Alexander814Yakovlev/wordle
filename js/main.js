@@ -117,6 +117,7 @@ function startNewGame() {
     // Выбираем случайное слово
     randomIndex = Math.floor(Math.random() * words.length)
     word = words[randomIndex]
+    console.log(word)
 
     // Создание игрового поля
     board.innerHTML = ''
@@ -254,7 +255,10 @@ function enterWord(e) {
             localStorage.wordle = JSON.stringify(gameData)
             Swal.fire({
                 icon: "success",
-                text: `Поздравляем!\n${word.name}\n${word.definition}`,
+                title: "Поздравляем!",
+                html: `<h4>${word.name}</h4>
+                        <h5>Определение слова:</h5>
+                        <p>${word.definitions[0]}</p>`,
                 preConfirm: startNewGame(),
                 confirmButtonColor: alertBtnColor,
             })
@@ -294,7 +298,10 @@ function enterWord(e) {
                 localStorage.wordle = JSON.stringify(gameData)
                 Swal.fire({
                     icon: "error",
-                    text: `Вы проиграли!\n${word.name}\n${word.definition}`,
+                    title: `Вы проиграли!`,
+                    html: `<h4>${word.name}</h4>
+                            <h5>Определение слова:</h5>
+                            <p>${word.definitions[0]}</p>`,
                     preConfirm: startNewGame(),
                     confirmButtonColor: alertBtnColor,
                 })
