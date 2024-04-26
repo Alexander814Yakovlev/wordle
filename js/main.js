@@ -35,14 +35,14 @@ function setDarkTheme(i) {
     document.documentElement.style.setProperty('--main-bg', '#2a2a38')
     document.documentElement.style.setProperty('--main-text', '#ffffff')
     document.documentElement.style.setProperty('--tile-bg', '#000000bf')
-    document.body.style.backgroundImage = `url(../img/backgrounds/Dark/${i}.svg)`
+    document.body.style.backgroundImage = `url(img/backgrounds/Dark/${i}.svg)`
 }
 
 function setLightTheme(i) {
     document.documentElement.style.setProperty('--main-bg', '#ffffff')
     document.documentElement.style.setProperty('--main-text', '#000000')
     document.documentElement.style.setProperty('--tile-bg', '#ffffffbf')
-    document.body.style.backgroundImage = `url(../img/backgrounds/Light/${i}.svg)`
+    document.body.style.backgroundImage = `url(img/backgrounds/Light/${i}.svg)`
 }
 
 // Создание главного экрана
