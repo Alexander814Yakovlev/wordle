@@ -76,13 +76,11 @@ function createApp() {
                     key.id = 'backspace'
                     key.textContent = ''
                     key.innerHTML = '<i class="las la-backspace"></i>'
-                    key.classList.add('red-bg')
                     break
                 case '10004':
                     key.id = 'enter'
                     key.textContent = ''
                     key.innerHTML = '<i class="las la-check"></i>'
-                    key.classList.add('green-bg')
             }
             row.appendChild(key)
         }

@@ -179,3 +179,11 @@ body {
     color: var(--main-text);
     background-color: var(--tile-bg);
 }
+
+#backspace {
+    background-color: #f83535c9;
+}
+
+#enter {
+    background-color: #3bfd21cc;
+}
