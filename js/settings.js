@@ -25,10 +25,10 @@ returnButton.onclick = function () {
 
 themeSwitch.onchange = function (e) {
     if (e.target.checked) {
-        setDarkTheme()
+        setDarkTheme(image)
         gameData.darkTheme = true
     } else {
-        setLightTheme()
+        setLightTheme(image)
         gameData.darkTheme = false
     }
     localStorage.wordle = JSON.stringify(gameData)

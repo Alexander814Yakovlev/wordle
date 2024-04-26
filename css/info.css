@@ -1,10 +1,17 @@
 .info {
     display: none;
+    padding-bottom: 20px;
 }
 
 .rules {
+    margin-bottom: 20px;
     padding: 20px 10px;
+    background-color: var(--tile-bg);
+    border-radius: 8px;
+    height: fit-content;
+    overflow: scroll;
 }
+
 .rules__section {
     border-bottom: 1px solid var(--main-text);
     margin-bottom: 10px;

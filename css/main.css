@@ -2,6 +2,7 @@
     --accent-bg: #f1d314;
     --main-bg: #ffffff;
     --main-text: #000000;
+    --tile-bg: #ffffffbf;
 }
 
 /* Normalize */
@@ -23,7 +24,11 @@ p {
 }
 
 body {
-    background-color: var(--main-bg);
+    /* background-color: var(--main-bg); */
+    background-image: url(../img/backgrounds/Light/1.svg);
+    background-position: center center;
+    background-repeat: repeat-y;
+    background-size: cover;
 }
 
 .bg-accent {
@@ -35,15 +40,15 @@ body {
 }
 
 .red-bg {
-    background-color: #fe2a2ad3;
+    background-color: #fe2a2ad3 !important;
 }
 
 .gray-bg {
-    background-color: #848484d1;
+    background-color: #848484d1 !important;
 }
 
 .yellow-bg {
-    background-color: #f1d414db;
+    background-color: #f1d414db !important;
 }
 
 .color-accent {
@@ -144,6 +149,7 @@ body {
     font-weight: 700;
     cursor: default;
     color: var(--main-text);
+    background-color: var(--tile-bg);
 }
 
 .keyboard {
@@ -171,4 +177,5 @@ body {
     border-radius: 5px;
     cursor: pointer;
     color: var(--main-text);
+    background-color: var(--tile-bg);
 }

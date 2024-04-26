@@ -10,6 +10,7 @@ let keyVibrateTime = 80
 let activeRow
 let activeCell
 let randomIndex
+let image
 let word
 
 let gameData = localStorage.getItem('wordle')
@@ -30,21 +31,22 @@ let alertBtnColor = '#f1d314'
 // Главный экран
 
 // Настройка темы
-function setDarkTheme() {
+function setDarkTheme(i) {
     document.documentElement.style.setProperty('--main-bg', '#2a2a38')
     document.documentElement.style.setProperty('--main-text', '#ffffff')
+    document.documentElement.style.setProperty('--tile-bg', '#000000bf')
+    document.body.style.backgroundImage = `url(../img/backgrounds/Dark/${i}.svg)`
 }
 
-function setLightTheme() {
+function setLightTheme(i) {
     document.documentElement.style.setProperty('--main-bg', '#ffffff')
     document.documentElement.style.setProperty('--main-text', '#000000')
+    document.documentElement.style.setProperty('--tile-bg', '#ffffffbf')
+    document.body.style.backgroundImage = `url(../img/backgrounds/Light/${i}.svg)`
 }
 
 // Создание главного экрана
 function createApp() {
-    if (gameData.darkTheme) {
-        setDarkTheme()
-    }
     // Создание логотипа
     for (let symbol of appName.split("")) {
         let tile = document.createElement("div")
@@ -118,6 +120,14 @@ function startNewGame() {
     randomIndex = Math.floor(Math.random() * words.length)
     word = words[randomIndex]
     console.log(word)
+
+    image = Math.floor(Math.random() * 4) + 1
+    console.log(image)
+    if (gameData.darkTheme) {
+        setDarkTheme(image)
+    } else {
+        setLightTheme(image)
+    }
 
     // Создание игрового поля
     board.innerHTML = ''
@@ -266,15 +276,20 @@ function enterWord(e) {
             // Если введенное слово != загаданному
             // Проверяем буквы на совпадения
             for (let i = 0; i < 5; i++) {
+                let tile = document.getElementById(`${activeRow.id}-${i + 1}`)
+                let keyTile = document.getElementById(currentWord[i].charCodeAt(0))
                 if (currentWord[i] == word.name[i]) {
-                    document.getElementById(`${activeRow.id}-${i + 1}`).classList.add("green-bg")
-                    document.getElementById(currentWord[i].charCodeAt(0)).classList.add("green-bg")
+                    tile.classList.add("green-bg")
+                    keyTile.className = keyTile.classList[0]
+                    keyTile.classList.add("green-bg")
                 } else if (word.name.split("").includes(currentWord[i])) {
-                    document.getElementById(`${activeRow.id}-${i + 1}`).classList.add("yellow-bg")
-                    document.getElementById(currentWord[i].charCodeAt(0)).classList.add("yellow-bg")
+                    tile.classList.add("yellow-bg")
+                    if (!keyTile.classList.contains("green-bg")) {
+                        keyTile.classList.add("yellow-bg")
+                    }
                 } else {
-                    document.getElementById(`${activeRow.id}-${i + 1}`).classList.add("gray-bg")
-                    document.getElementById(currentWord[i].charCodeAt(0)).classList.add("gray-bg")
+                    tile.classList.add("gray-bg")
+                    keyTile.classList.add("gray-bg")
                 }
             }
             if (activeRow.id < 6) {
