@@ -24,7 +24,7 @@ p {
 }
 
 body {
-    /* background-color: var(--main-bg); */
+    background-color: var(--main-bg);
     background-image: url(../img/backgrounds/Light/1.svg);
     background-position: center center;
     background-repeat: repeat-y;
